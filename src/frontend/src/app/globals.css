@@ -25,8 +25,8 @@
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
 
-    --tint: 22.4 31.5% 35.8%;
-    --tint-foreground: 25 76% 31%;
+    --tint: 255 88% 44%;
+    --tint-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -60,7 +60,7 @@
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
 
-    --tint: 22.4 31.5% 41.8%;
+    --tint: 255 80% 65%;
     --tint-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -78,5 +78,29 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .shimmer-text {
+    background: linear-gradient(90deg, 
+      hsl(var(--muted-foreground) / 0.6), 
+      hsl(var(--foreground)), 
+      hsl(var(--muted-foreground) / 0.6)
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 5s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }

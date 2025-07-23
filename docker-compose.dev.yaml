@@ -68,7 +68,7 @@ services:
         - NEXT_PUBLIC_PRO_MODE_ENABLED=${NEXT_PUBLIC_PRO_MODE_ENABLED:-true}
     restart: always
     ports:
-      - "3000:3000"
+      - "3001:3000"
     develop:
       watch:
         - action: sync
@@ -83,7 +83,7 @@ services:
     image: docker.io/searxng/searxng:latest
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - "8081:8080"
     volumes:
       - ./searxng:/etc/searxng:rw
     networks:

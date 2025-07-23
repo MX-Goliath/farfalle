@@ -101,7 +101,11 @@ const ProSearchSkeleton = () => {
         <h1 className="text-lg font-medium ">Expert Search</h1>
       </div>
       <Separator />
-      <Skeleton className="w-full h-[30px] bg-card" />
+      <div className="flex items-center justify-center py-6">
+        <div className="text-lg font-medium shimmer-text">
+          Генерация плана исследования...
+        </div>
+      </div>
     </div>
   );
 };
@@ -163,7 +167,9 @@ export const ProSearchRender = ({
                     disabled={status !== AgentSearchStepStatus.DONE || isLast}
                   >
                     <AccordionTrigger className="w-full text-left hover:no-underline hover:bg-card/80 rounded-md px-2 py-2 my-1 text-primary">
-                      {step}
+                      <span className={status === AgentSearchStepStatus.CURRENT ? "shimmer-text" : ""}>
+                        {step}
+                      </span>
                     </AccordionTrigger>
                     <AccordionContent className="w-full px-3 py-1">
                       <StepSection

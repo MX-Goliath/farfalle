@@ -2,7 +2,7 @@
 
 Open-source AI-powered search engine. (Perplexity Clone)
 
-Run local LLMs (**llama3**, **gemma**, **mistral**, **phi3**), custom LLMs through **LiteLLM**, or use cloud models (**Groq/Llama3**, **OpenAI/gpt4-o**)
+Run local LLMs (**Qwen3**, **gemma3:12b**, **mistral**, **phi3**), custom LLMs through **LiteLLM**, or use cloud models (**Groq/Qwen3**, **OpenAI/gpt4-o**)
 
 https://github.com/rashadphz/farfalle/assets/20783686/9527a8c9-a13b-4e53-9cda-a3ab28d671b2
 
@@ -43,8 +43,8 @@ Please feel free to contact me on [Twitter](https://twitter.com/rashadphz) or [c
 
 ## Features
 - Search with multiple search providers (Tavily, Searxng, Serper, Bing)
-- Answer questions with cloud models (OpenAI/gpt4-o, OpenAI/gpt3.5-turbo, Groq/Llama3)
-- Answer questions with local models (llama3, mistral, gemma, phi3)
+- Answer questions with cloud models (OpenAI/gpt4-o, OpenAI/gpt3.5-turbo, Groq/Qwen3)
+- Answer questions with local models (Qwen3, mistral, gemma3:12b, phi3)
 - Answer questions with any custom LLMs through [LiteLLM](https://litellm.vercel.app/docs/providers)
 - Search with an agent that plans and executes the search for better results
 
@@ -54,7 +54,7 @@ Please feel free to contact me on [Twitter](https://twitter.com/rashadphz) or [c
 
 - [Docker](https://docs.docker.com/get-docker/)
 - [Ollama](https://ollama.com/download) (If running local models)
-  - Download any of the supported models: **llama3**, **mistral**, **gemma**, **phi3**
+  - Download any of the supported models: **Qwen3**, **mistral**, **gemma3:12b**, **phi3**
   - Start ollama server `ollama serve`
 
 ### Get API Keys
@@ -77,7 +77,7 @@ Start the app:
 docker-compose -f docker-compose.dev.yaml up -d
 ```
 
-Wait for the app to start then visit [http://localhost:3000](http://localhost:3000).
+Wait for the app to start then visit [http://localhost:3001](http://localhost:3001).
 
 For custom setup instructions, see [custom-setup-instructions.md](/custom-setup-instructions.md)
 
@@ -104,5 +104,5 @@ And you're done! 🥳
 To use Farfalle as your default search engine, follow these steps:
 1. Visit the settings of your browser
 2. Go to 'Search Engines'
-3. Create a new search engine entry using this URL: http://localhost:3000/?q=%s.
+3. Create a new search engine entry using this URL: http://localhost:3001/?q=%s.
 4. Add the search engine.

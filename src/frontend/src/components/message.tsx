@@ -6,6 +6,7 @@ import _ from "lodash";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "./ui/skeleton";
 import { ChatMessage } from "../../generated";
+import { extractReasoning } from "@/lib/reasoning";
 
 function chunkString(str: string): string[] {
   const words = str.split(" ");
@@ -123,8 +124,11 @@ export const MessageComponent: FC<MessageProps> = ({
   const [parsedMessage, setParsedMessage] = useState<string>(content);
 
   useEffect(() => {
+    // Extract reasoning and get clean content
+    const { cleanContent } = extractReasoning(content);
+    
     const citationRegex = /(\[\d+\])/g;
-    const newMessage = content.replace(citationRegex, (match) => {
+    const newMessage = cleanContent.replace(citationRegex, (match) => {
       const number = match.slice(1, -1);
       const source = sources?.find(
         (source, idx) => idx + 1 === parseInt(number),

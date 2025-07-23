@@ -48,7 +48,7 @@ class QueryPlanStep(BaseModel):
 
 class QueryPlan(BaseModel):
     steps: list[QueryPlanStep] = Field(
-        ..., description="The steps to complete the query", max_length=4
+        ..., description="The steps to complete the query", max_length=10
     )
 
 

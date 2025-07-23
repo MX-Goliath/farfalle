@@ -7,7 +7,7 @@ export BING_API_KEY=${BING_API_KEY}
 export SERP_API_KEY=${SERP_API_KEY}
 
 export SEARCH_PROVIDER=${SEARCH_PROVIDER:-searxng}
-export SEARXNG_BASE_URL=${SEARXNG_BASE_URL:-http://localhost:8080}
+export SEARXNG_BASE_URL=${SEARXNG_BASE_URL:-http://localhost:8081}
 
 # LLM
 export OPENAI_API_KEY=${OPENAI_API_KEY}

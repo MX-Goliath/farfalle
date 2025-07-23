@@ -68,9 +68,9 @@ export enum ChatModel {
   LLAMA_3_70B = "llama-3-70b",
   GPT_4O = "gpt-4o",
   GPT_4O_MINI = "gpt-4o-mini",
-  LLAMA3 = "llama3.1",
-  GEMMA = "gemma",
-  MISTRAL = "mistral",
+  Qwen3 = "qwen3:30b",
+  GEMMA = "gemma3:12b",
+  MISTRAL = "mistral-small-3.1:latest",
   PHI3_14B = "phi3:14b",
   CUSTOM = "custom",
 }

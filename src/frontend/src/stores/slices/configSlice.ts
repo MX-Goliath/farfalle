@@ -22,21 +22,21 @@ export const createConfigSlice: StateCreator<
   [],
   ConfigStore
 > = (set) => ({
-  model: ChatModel.GPT_4O_MINI,
-  localMode: false,
+  model: ChatModel.Qwen3,
+  localMode: true,
   proMode: false,
   setModel: (model: ChatModel) => set({ model }),
   toggleLocalMode: () =>
     set((state) => {
       const localModeEnabled = env.NEXT_PUBLIC_LOCAL_MODE_ENABLED;
       if (!localModeEnabled) {
-        return { ...state, localMode: false };
+        return { ...state, localMode: true };
       }
 
       const newLocalMode = !state.localMode;
       const newModel = newLocalMode
-        ? ChatModel.LLAMA3
-        : ChatModel.GPT_4O_MINI;
+        ? ChatModel.Qwen3
+        : ChatModel.Qwen3;
       return { localMode: newLocalMode, model: newModel };
     }),
   toggleProMode: () =>
