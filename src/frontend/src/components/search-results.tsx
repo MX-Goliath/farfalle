@@ -25,6 +25,17 @@ export const SearchResultsSkeleton = () => {
 };
 
 export const Logo = ({ url }: { url: string }) => {
+  const [hasError, setHasError] = useState(false);
+  
+  if (hasError) {
+    // Показываем простую иконку вместо сломанного фавикона
+    return (
+      <div className="rounded-full overflow-hidden relative bg-muted w-4 h-4 flex items-center justify-center">
+        <div className="w-2 h-2 bg-muted-foreground rounded-full"></div>
+      </div>
+    );
+  }
+  
   return (
     <div className="rounded-full overflow-hidden relative">
       <img
@@ -33,6 +44,7 @@ export const Logo = ({ url }: { url: string }) => {
         alt="favicon"
         width={16}
         height={16}
+        onError={() => setHasError(true)}
       />
     </div>
   );
